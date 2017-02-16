@@ -1697,6 +1697,7 @@ pre .javascript .function {
   margin-bottom: 10px;
   border-bottom-color: #555;
   font-size: 13px;
+  text-align: center;
 }
 .links-of-author a:before {
   display: inline-block;
@@ -1706,7 +1707,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff477;
+  background: #ff25ff;
 }
 .links-of-blogroll {
   font-size: 13px;
