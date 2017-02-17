@@ -89,23 +89,23 @@
 
 <meta name="description" content="原文
 REST（Representation State Transfer:表述性状态转移）2000年在Roy Fielding的博士论文中被介绍和定义.REST是设计分布式系统的一种架构风格。 它不是一个标准，而是一组约束，例如是无状态的，具有客户端/服务器关系，以及统一的接口。 REST不是与HTTP严格相关，但它最常与它相关联。
-##REST的原则
-资源(RESOURCES):暴露容易理解的">
+REST的原则
+资源(RESOURCES):暴露容易理解的目录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="理解REST">
 <meta property="og:url" content="http://yoursite.com/2017/02/17/REST/index.html">
 <meta property="og:site_name" content="LargebeaR's Home">
 <meta property="og:description" content="原文
 REST（Representation State Transfer:表述性状态转移）2000年在Roy Fielding的博士论文中被介绍和定义.REST是设计分布式系统的一种架构风格。 它不是一个标准，而是一组约束，例如是无状态的，具有客户端/服务器关系，以及统一的接口。 REST不是与HTTP严格相关，但它最常与它相关联。
-##REST的原则
-资源(RESOURCES):暴露容易理解的">
-<meta property="og:updated_time" content="2017-02-17T13:46:37.210Z">
+REST的原则
+资源(RESOURCES):暴露容易理解的目录">
+<meta property="og:updated_time" content="2017-02-17T14:10:22.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解REST">
 <meta name="twitter:description" content="原文
 REST（Representation State Transfer:表述性状态转移）2000年在Roy Fielding的博士论文中被介绍和定义.REST是设计分布式系统的一种架构风格。 它不是一个标准，而是一组约束，例如是无状态的，具有客户端/服务器关系，以及统一的接口。 REST不是与HTTP严格相关，但它最常与它相关联。
-##REST的原则
-资源(RESOURCES):暴露容易理解的">
+REST的原则
+资源(RESOURCES):暴露容易理解的目录">
 
 
 
@@ -385,24 +385,29 @@ REST（Representation State Transfer:表述性状态转移）2000年在Roy Field
       
         <p><a href="https://spring.io/understanding/REST" target="_blank" rel="external">原文</a></p>
 <p>REST（Representation State Transfer:表述性状态转移）2000年在Roy Fielding的博士论文中被介绍和定义.REST是设计分布式系统的一种架构风格。 它不是一个标准，而是一组约束，例如是无状态的，具有客户端/服务器关系，以及统一的接口。 REST不是与HTTP严格相关，但它最常与它相关联。</p>
-<p>##REST的原则</p>
+<p><strong><em>REST的原则</em></strong></p>
 <p><strong>资源(RESOURCES)</strong>:暴露容易理解的目录结构URIS</p>
 <p><strong>表述性（Representations）</strong>：传输JSON或XML形式来表示数据对象和属性</p>
 <p><strong>消息(Messages)</strong>：明确使用HTTP方法(比如GET,POST,PUT,和DELETE)</p>
 <p><strong>无状态(Stateless)</strong>:请求之间的交互没有在服务器存储客户端上下文。限制了状态依赖性和扩展性。客户端保存会话状态.</p>
-<p>##HTTP方法<br>使用HTTP方法将CRUD(create,retrieve,update,delete)操作映射到HTTP请求.</p>
-<p>###GET<br>检索信息.GET请求必须是安全和幂等的，意味着无论使用相同的参数多少次，结果是一样的(译者注：这里的用结果来表述可能有问题，http规范中get请求是说幂等，即使有副作用每次的副作用应该一样，因为如果每次请求的结果不一样，但是没有产生副作用也属于幂等)。它们可能有副作用，但是用户并不期待它们(译者注:这里副作用没搞清楚是啥),所以它们对于系统的操作的来说是不重要的。请求也可以是部分或者是有条件的。</p>
+<p><strong><em>HTTP方法</em></strong></p>
+<p>使用HTTP方法将CRUD(create,retrieve,update,delete)操作映射到HTTP请求.</p>
+<p><strong>GET</strong></p>
+<p>检索信息.GET请求必须是安全和幂等的，意味着无论使用相同的参数多少次，结果是一样的(译者注：这里的用结果来表述可能有问题，http规范中get请求是说幂等，即使有副作用每次的副作用应该一样，因为如果每次请求的结果不一样，但是没有产生副作用也属于幂等)。它们可能有副作用，但是用户并不期待它们(译者注:这里副作用没搞清楚是啥),所以它们对于系统的操作的来说是不重要的。请求也可以是部分或者是有条件的。</p>
 <p>检索ID为1的地址：<br>GET /addresses/1</p>
-<p>###POST<br>请求URI上的资源对提供的实体(entity)做一些操作(do something)。通常POST用来创建一个新实体，但它也可以用来更新实体.</p>
+<p><strong>POST</strong></p>
+<p>请求URI上的资源对提供的实体(entity)做一些操作(do something)。通常POST用来创建一个新实体，但它也可以用来更新实体.</p>
 <p>创建一个新地址：<br>POST /addresses</p>
-<p>###PUT<br>将实体存储在URI。 PUT可以创建新实体或更新现有实体。 PUT请求是幂等的。 幂等性是PUT与POST请求之间的主要区别(译者注：PUT是幂等，POST不是幂等)。</p>
+<p><strong>PUT</strong></p>
+<p>将实体存储在URI。 PUT可以创建新实体或更新现有实体。 PUT请求是幂等的。 幂等性是PUT与POST请求之间的主要区别(译者注：PUT是幂等，POST不是幂等)。</p>
 <p>修改ID为1的地址：</p>
 <p>PUT /addresses/1</p>
 <p>注意：PUT替换现有实体。 如果仅提供数据元素的子集，则剩余的将被空或空替换。</p>
-<p>###DELETE<br>请求删除资源; 然而，资源不必立即被移除。 它可以是异步或长期运行的请求。</p>
+<p><strong>DELETE</strong></p>
+<p>请求删除资源; 然而，资源不必立即被移除。 它可以是异步或长期运行的请求。</p>
 <p>删除ID为1的地址：</p>
 <p>DELETE /addresses/1</p>
-<p>###HTTP状态代码</p>
+<p><strong>HTTP状态代码</strong></p>
 <ul>
 <li>1XX -infomational</li>
 <li>2XX -success  </li>
@@ -410,7 +415,7 @@ REST（Representation State Transfer:表述性状态转移）2000年在Roy Field
 <li>4XX -client error</li>
 <li>5XX -server error</li>
 </ul>
-<p>###媒体类型<br>Accept和Content-Type HTTP头可以用于描述在HTTP请求中发送或请求的内容。 如果客户端请求JSON中的响应，则客户端可以将接受设置为application / json。 相反，当发送数据时，将Content-Type设置为application / xml告诉服务端请求中发送的数据是XML。(译者注：原文为告诉客户端，觉得不妥)</p>
+<p><strong>媒体类型</strong><br>Accept和Content-Type HTTP头可以用于描述在HTTP请求中发送或请求的内容。 如果客户端请求JSON中的响应，则客户端可以将接受设置为application / json。 相反，当发送数据时，将Content-Type设置为application / xml告诉服务端请求中发送的数据是XML。(译者注：原文为告诉客户端，觉得不妥)</p>
 <p>译者注：</p>
 <p><strong>幂等性(Idempotence)</strong>：</p>
 <p>通俗的讲就是一个资源无论请求多少次，其副作用都是一样的(如果没有副作用的话那么应该n次都没有副作用)。</p>
