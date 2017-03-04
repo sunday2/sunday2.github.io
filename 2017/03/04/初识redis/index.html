@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="redis," />
 
 
 
@@ -87,15 +87,16 @@
 
 
 
-<meta name="description" content="Actions speak louder than words.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LargebeaR's Home">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Redis是一个开源的(BSD许可)，内存(译者注：in-memory)数据存储结构，被用作数据库，缓存，消息代理了。它支持诸如字符串，哈希，列表，集合，带有范围查询的排序集，位图，超文本和具有半径查询的地理空间索引.Redis具有内置复制，Lua脚本，LRU逐出，事务和不同级别的磁盘持久性，通过Redis Sentinel提供高可用和通过Redis Cluster（译者注：cluster【簇】）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识redis">
+<meta property="og:url" content="http://yoursite.com/2017/03/04/初识redis/index.html">
 <meta property="og:site_name" content="LargebeaR's Home">
-<meta property="og:description" content="Actions speak louder than words.">
+<meta property="og:description" content="Redis是一个开源的(BSD许可)，内存(译者注：in-memory)数据存储结构，被用作数据库，缓存，消息代理了。它支持诸如字符串，哈希，列表，集合，带有范围查询的排序集，位图，超文本和具有半径查询的地理空间索引.Redis具有内置复制，Lua脚本，LRU逐出，事务和不同级别的磁盘持久性，通过Redis Sentinel提供高可用和通过Redis Cluster（译者注：cluster【簇】）">
+<meta property="og:updated_time" content="2017-03-04T13:30:47.124Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LargebeaR's Home">
-<meta name="twitter:description" content="Actions speak louder than words.">
+<meta name="twitter:title" content="初识redis">
+<meta name="twitter:description" content="Redis是一个开源的(BSD许可)，内存(译者注：in-memory)数据存储结构，被用作数据库，缓存，消息代理了。它支持诸如字符串，哈希，列表，集合，带有范围查询的排序集，位图，超文本和具有半径查询的地理空间索引.Redis具有内置复制，Lua脚本，LRU逐出，事务和不同级别的磁盘持久性，通过Redis Sentinel提供高可用和通过Redis Cluster（译者注：cluster【簇】）">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/04/初识redis/"/>
 
 
 
 
 
-  <title> LargebeaR's Home </title>
+  <title> 初识redis | LargebeaR's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +155,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,9 +256,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -292,10 +291,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/04/初识redis/" itemprop="url">
-                  初识redis
-                </a>
+                初识redis
               
             
           </h1>
@@ -378,9 +374,7 @@
       
 
       
-        
-          
-            <p>Redis是一个开源的(BSD许可)，内存(译者注：in-memory)数据存储结构，被用作数据库，缓存，消息代理了。它支持诸如字符串，哈希，列表，集合，带有范围查询的排序集，位图，超文本和具有半径查询的地理空间索引.Redis具有内置复制，Lua脚本，LRU逐出，事务和不同级别的磁盘持久性，通过Redis Sentinel提供高可用和通过Redis Cluster（译者注：cluster【簇】）进行自动分区.<br><br>&nbsp;&nbsp;&nbsp;你可以在这些类型上至执行原子操作，例如附加字符串，递增散列中的值，增加列表元素，计算交集，并集，差集，或者获得排序集中排名最高的元素。<br></p>
+        <p>Redis是一个开源的(BSD许可)，内存(译者注：in-memory)数据存储结构，被用作数据库，缓存，消息代理了。它支持诸如字符串，哈希，列表，集合，带有范围查询的排序集，位图，超文本和具有半径查询的地理空间索引.Redis具有内置复制，Lua脚本，LRU逐出，事务和不同级别的磁盘持久性，通过Redis Sentinel提供高可用和通过Redis Cluster（译者注：cluster【簇】）进行自动分区.<br><br>&nbsp;&nbsp;&nbsp;你可以在这些类型上至执行原子操作，例如附加字符串，递增散列中的值，增加列表元素，计算交集，并集，差集，或者获得排序集中排名最高的元素。<br></p>
 <p>&nbsp;&nbsp;&nbsp;为了实现其出色的性能，Redis使用内存中的数据集。 根据您的用例，您可以通过将数据集每隔一段时间转储到磁盘，或通过将每个命令附加到日志来持久化它。 如果您只需要功能丰富的联网的内存缓存，则可以选择禁用持久性。<br></p>
 <p>&nbsp;&nbsp;&nbsp;Redis还支持平滑到建立主从异步复制，具有非常快的非阻塞第一同步，自动重新连接和部分重新同步在网络分裂上。<br>其他功能包括：<br></p>
 <ul>
@@ -395,46 +389,119 @@
 <p>Redis是所谓的键值存储，通常被称为NoSQL数据库。 键值存储的本质是在键内存储一些数据（称为值）的能力。 仅当我们知道用于存储它的确切密钥时，才可以稍后检索该数据。 我们可以使用命令SET将值“fido”存储在“server：name”键：<br><br>   SET server:name “fido”<br></p>
 <p>Redis将永久存储我们的数据，所以我们可以稍后问“什么是存储在密钥服务器上的值：name？ 并且Redis将回复“fido”：<br><br>  GET server:name =&gt; “fido”</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/site.png" alt="Josh Loh wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫，用手机访问本站</div>
+</div>
+
+
       
     </div>
 
     <div>
       
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Josh Loh WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Josh Loh Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
     </div>
+  </div>
 
-    <div>
+
       
     </div>
 
 	<div>
 	  
+		
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
+
+	  
 	</div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/redis/" rel="tag"># redis</a>
+          
+        </div>
       
 
       
+        
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/25/各种快捷键/" rel="next" title="你必须知道的快捷键">
+                <i class="fa fa-chevron-left"></i> 你必须知道的快捷键
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/04/初识redis/"
+     data-title="初识redis"
+     data-content=""
+     data-url="http://yoursite.com/2017/03/04/初识redis/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
           
           </div>
@@ -442,6 +509,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/04/初识redis/"
+           data-title="初识redis" data-url="http://yoursite.com/2017/03/04/初识redis/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -671,6 +746,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
