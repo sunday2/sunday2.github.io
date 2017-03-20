@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="logger,log4j," />
 
 
 
@@ -87,15 +87,16 @@
 
 
 
-<meta name="description" content="Actions speak louder than words.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LargebeaR's Home">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="日志框架可谓非常重要，虽然严格来说它不是业务逻辑的一部分，但是却是不可缺少的一部分，因为它，我们可以了解程序的运行状态，快速定位错误位置。一直以来，我都觉得人类设计的产品或者术语在生活中都一定能找到原型(唯物主义)，通过生活中的例子我们能更快的接受这个概念.生活中日志的作用就是软件领域中日志框架的作用。程序都是人类设计出来的，那么设计人员就有必要将程序的运行状态告诉别人，至于应该将什么信息（La">
+<meta property="og:type" content="article">
+<meta property="og:title" content="log4j跟踪(1)">
+<meta property="og:url" content="http://yoursite.com/2017/03/20/log4j跟踪(1)/index.html">
 <meta property="og:site_name" content="LargebeaR's Home">
-<meta property="og:description" content="Actions speak louder than words.">
+<meta property="og:description" content="日志框架可谓非常重要，虽然严格来说它不是业务逻辑的一部分，但是却是不可缺少的一部分，因为它，我们可以了解程序的运行状态，快速定位错误位置。一直以来，我都觉得人类设计的产品或者术语在生活中都一定能找到原型(唯物主义)，通过生活中的例子我们能更快的接受这个概念.生活中日志的作用就是软件领域中日志框架的作用。程序都是人类设计出来的，那么设计人员就有必要将程序的运行状态告诉别人，至于应该将什么信息（La">
+<meta property="og:updated_time" content="2017-03-20T03:35:16.715Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LargebeaR's Home">
-<meta name="twitter:description" content="Actions speak louder than words.">
+<meta name="twitter:title" content="log4j跟踪(1)">
+<meta name="twitter:description" content="日志框架可谓非常重要，虽然严格来说它不是业务逻辑的一部分，但是却是不可缺少的一部分，因为它，我们可以了解程序的运行状态，快速定位错误位置。一直以来，我都觉得人类设计的产品或者术语在生活中都一定能找到原型(唯物主义)，通过生活中的例子我们能更快的接受这个概念.生活中日志的作用就是软件领域中日志框架的作用。程序都是人类设计出来的，那么设计人员就有必要将程序的运行状态告诉别人，至于应该将什么信息（La">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/20/log4j跟踪(1)/"/>
 
 
 
 
 
-  <title> LargebeaR's Home </title>
+  <title> log4j跟踪(1) | LargebeaR's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +155,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,9 +256,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -292,10 +291,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/20/log4j跟踪(1)/" itemprop="url">
-                  log4j跟踪(1)
-                </a>
+                log4j跟踪(1)
               
             
           </h1>
@@ -378,9 +374,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>日志框架可谓非常重要，虽然严格来说它不是业务逻辑的一部分，但是却是不可缺少的一部分，因为它，我们可以了解程序的运行状态，快速定位错误位置。一直以来，我都觉得人类设计的产品或者术语在生活中都一定能找到原型(唯物主义)，通过生活中的例子我们能更快的接受这个概念.生活中日志的作用就是软件领域中日志框架的作用。程序都是人类设计出来的，那么设计人员就有必要将程序的运行状态告诉别人，至于应该将什么信息（Layout），以什么方式(Appender)告诉别人是设计人员的事情.下面先将log4j的一些基本概念捋清楚.</p>
 </blockquote>
 <h3 id="Appender"><a href="#Appender" class="headerlink" title="Appender"></a>Appender</h3><p>log4j中的Appender是一个接口类，这个类是对日志的载体的抽象，就是用什么载体来记录日志。生活中你可一用纸质媒体，可以用视频形式等。log4j实现该接口的类有：</p>
@@ -409,46 +403,121 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">package</span> org.apache.log4j;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</div><div class="line"><span class="keyword">import</span> java.io.ObjectOutputStream;</div><div class="line"><span class="keyword">import</span> java.io.ObjectStreamException;</div><div class="line"><span class="keyword">import</span> java.io.Serializable;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Level</span> <span class="keyword">extends</span> <span class="title">Priority</span></span></div><div class="line">  <span class="keyword">implements</span> <span class="title">Serializable</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TRACE_INT = <span class="number">5000</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Level OFF = <span class="keyword">new</span> Level(<span class="number">2147483647</span>, <span class="string">"OFF"</span>, <span class="number">0</span>);</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Level FATAL = <span class="keyword">new</span> Level(<span class="number">50000</span>, <span class="string">"FATAL"</span>, <span class="number">0</span>);</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Level ERROR = <span class="keyword">new</span> Level(<span class="number">40000</span>, <span class="string">"ERROR"</span>, <span class="number">3</span>);</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Level WARN = <span class="keyword">new</span> Level(<span class="number">30000</span>, <span class="string">"WARN"</span>, <span class="number">4</span>);</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Level INFO = <span class="keyword">new</span> Level(<span class="number">20000</span>, <span class="string">"INFO"</span>, <span class="number">6</span>);</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Level DEBUG = <span class="keyword">new</span> Level(<span class="number">10000</span>, <span class="string">"DEBUG"</span>, <span class="number">7</span>);</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Level TRACE = <span class="keyword">new</span> Level(<span class="number">5000</span>, <span class="string">"TRACE"</span>, <span class="number">7</span>);</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Level ALL = <span class="keyword">new</span> Level(-<span class="number">2147483648</span>, <span class="string">"ALL"</span>, <span class="number">7</span>);</div><div class="line">  <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">3491141966387921974L</span>;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="title">Level</span><span class="params">(<span class="keyword">int</span> level, String levelStr, <span class="keyword">int</span> syslogEquivalent)</span></span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">super</span>(level, levelStr, syslogEquivalent);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Level <span class="title">toLevel</span><span class="params">(String sArg)</span></span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">return</span> toLevel(sArg, DEBUG);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Level <span class="title">toLevel</span><span class="params">(<span class="keyword">int</span> val)</span></span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">return</span> toLevel(val, DEBUG);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Level <span class="title">toLevel</span><span class="params">(<span class="keyword">int</span> val, Level defaultLevel)</span></span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">switch</span> (val) &#123; <span class="keyword">case</span> -<span class="number">2147483648</span>:</div><div class="line">      <span class="keyword">return</span> ALL;</div><div class="line">    <span class="keyword">case</span> <span class="number">10000</span>:</div><div class="line">      <span class="keyword">return</span> DEBUG;</div><div class="line">    <span class="keyword">case</span> <span class="number">20000</span>:</div><div class="line">      <span class="keyword">return</span> INFO;</div><div class="line">    <span class="keyword">case</span> <span class="number">30000</span>:</div><div class="line">      <span class="keyword">return</span> WARN;</div><div class="line">    <span class="keyword">case</span> <span class="number">40000</span>:</div><div class="line">      <span class="keyword">return</span> ERROR;</div><div class="line">    <span class="keyword">case</span> <span class="number">50000</span>:</div><div class="line">      <span class="keyword">return</span> FATAL;</div><div class="line">    <span class="keyword">case</span> <span class="number">2147483647</span>:</div><div class="line">      <span class="keyword">return</span> OFF;</div><div class="line">    <span class="keyword">case</span> <span class="number">5000</span>:</div><div class="line">      <span class="keyword">return</span> TRACE; &#125;</div><div class="line">    <span class="keyword">return</span> defaultLevel;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Level <span class="title">toLevel</span><span class="params">(String sArg, Level defaultLevel)</span></span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">if</span> (sArg == <span class="keyword">null</span>) &#123;</div><div class="line">      <span class="keyword">return</span> defaultLevel;</div><div class="line">    &#125;</div><div class="line">    String s = sArg.toUpperCase();</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (s.equals(<span class="string">"ALL"</span>)) <span class="keyword">return</span> ALL;</div><div class="line">    <span class="keyword">if</span> (s.equals(<span class="string">"DEBUG"</span>)) <span class="keyword">return</span> DEBUG;</div><div class="line">    <span class="keyword">if</span> (s.equals(<span class="string">"INFO"</span>)) <span class="keyword">return</span> INFO;</div><div class="line">    <span class="keyword">if</span> (s.equals(<span class="string">"WARN"</span>)) <span class="keyword">return</span> WARN;</div><div class="line">    <span class="keyword">if</span> (s.equals(<span class="string">"ERROR"</span>)) <span class="keyword">return</span> ERROR;</div><div class="line">    <span class="keyword">if</span> (s.equals(<span class="string">"FATAL"</span>)) <span class="keyword">return</span> FATAL;</div><div class="line">    <span class="keyword">if</span> (s.equals(<span class="string">"OFF"</span>)) <span class="keyword">return</span> OFF;</div><div class="line">    <span class="keyword">if</span> (s.equals(<span class="string">"TRACE"</span>)) <span class="keyword">return</span> TRACE;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (s.equals(<span class="string">"İNFO"</span>)) <span class="keyword">return</span> INFO;</div><div class="line">    <span class="keyword">return</span> defaultLevel;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">readObject</span><span class="params">(ObjectInputStream s)</span></span></div><div class="line">    <span class="keyword">throws</span> IOException, ClassNotFoundException</div><div class="line">  &#123;</div><div class="line">    s.defaultReadObject();</div><div class="line">    <span class="keyword">this</span>.level = s.readInt();</div><div class="line">    <span class="keyword">this</span>.syslogEquivalent = s.readInt();</div><div class="line">    <span class="keyword">this</span>.levelStr = s.readUTF();</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.levelStr == <span class="keyword">null</span>)</div><div class="line">      <span class="keyword">this</span>.levelStr = <span class="string">""</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">writeObject</span><span class="params">(ObjectOutputStream s)</span></span></div><div class="line">    <span class="keyword">throws</span> IOException</div><div class="line">  &#123;</div><div class="line">    s.defaultWriteObject();</div><div class="line">    s.writeInt(<span class="keyword">this</span>.level);</div><div class="line">    s.writeInt(<span class="keyword">this</span>.syslogEquivalent);</div><div class="line">    s.writeUTF(<span class="keyword">this</span>.levelStr);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">private</span> Object <span class="title">readResolve</span><span class="params">()</span></span></div><div class="line">    <span class="keyword">throws</span> ObjectStreamException</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">if</span> (getClass() == Level.class) &#123;</div><div class="line">      <span class="keyword">return</span> toLevel(<span class="keyword">this</span>.level);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>rootLogger是所有Logger的超类,当当前logger没有具体自己的配置时，那么使用的就是rootLogger的配置.<br>总结一下Logger的配置方式，logger-&gt;level-&gt;appender-&gt;layout.即logger关联 level，level关联了appender，appender关联layout.之间的关系分别是1对多，1对多，1对1.这点是关键,大家一定要记住.</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/site.png" alt="Josh Loh wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫，用手机访问本站</div>
+</div>
+
+
       
     </div>
 
     <div>
       
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Josh Loh WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Josh Loh Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
     </div>
+  </div>
 
-    <div>
+
       
     </div>
 
 	<div>
 	  
+		
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
+
+	  
 	</div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/logger/" rel="tag"># logger</a>
+          
+            <a href="/tags/log4j/" rel="tag"># log4j</a>
+          
+        </div>
       
 
       
+        
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/12/IntelliJ/从eclipe迁移到IntelliJ IDEA/" rel="next" title="从eclipse迁移到IntelliJ IDEA">
+                <i class="fa fa-chevron-left"></i> 从eclipse迁移到IntelliJ IDEA
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/20/log4j跟踪(1)/"
+     data-title="log4j跟踪(1)"
+     data-content=""
+     data-url="http://yoursite.com/2017/03/20/log4j跟踪(1)/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
           
           </div>
@@ -456,6 +525,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/20/log4j跟踪(1)/"
+           data-title="log4j跟踪(1)" data-url="http://yoursite.com/2017/03/20/log4j跟踪(1)/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -685,6 +762,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 

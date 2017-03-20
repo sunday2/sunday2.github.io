@@ -268,7 +268,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/25/各种快捷键/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/04/初识redis/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Josh Loh">
@@ -293,8 +293,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/25/各种快捷键/" itemprop="url">
-                  你必须知道的快捷键
+                <a class="post-title-link" href="/2017/03/04/初识redis/" itemprop="url">
+                  初识redis
                 </a>
               
             
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-25T10:47:01+08:00">
-                2017-02-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-04T21:31:29+08:00">
+                2017-03-04
               </time>
             
 
@@ -333,8 +333,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习方法/" itemprop="url" rel="index">
-                    <span itemprop="name">学习方法</span>
+                  <a href="/categories/翻译/" itemprop="url" rel="index">
+                    <span itemprop="name">翻译</span>
                   </a>
                 </span>
 
@@ -351,8 +351,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/25/各种快捷键/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/25/各种快捷键/" itemprop="commentCount"></span>
+                <a href="/2017/03/04/初识redis/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/04/初识redis/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -380,35 +380,20 @@
       
         
           
-            <p>一开始我觉得去记快捷键是一件没必要的事，后来慢慢接触的东西多了，发现快捷键真的是提高了效率，常用的快捷键必须要记住，它带给你两个方面的好处：</p>
+            <p>Redis是一个开源的(BSD许可)，内存(译者注：in-memory)数据存储结构，被用作数据库，缓存，消息代理了。它支持诸如字符串，哈希，列表，集合，带有范围查询的排序集，位图，超文本和具有半径查询的地理空间索引.Redis具有内置复制，Lua脚本，LRU逐出，事务和不同级别的磁盘持久性，通过Redis Sentinel提供高可用和通过Redis Cluster（译者注：cluster【簇】）进行自动分区.<br><br>&nbsp;&nbsp;&nbsp;你可以在这些类型上至执行原子操作，例如附加字符串，递增散列中的值，增加列表元素，计算交集，并集，差集，或者获得排序集中排名最高的元素。<br></p>
+<p>&nbsp;&nbsp;&nbsp;为了实现其出色的性能，Redis使用内存中的数据集。 根据您的用例，您可以通过将数据集每隔一段时间转储到磁盘，或通过将每个命令附加到日志来持久化它。 如果您只需要功能丰富的联网的内存缓存，则可以选择禁用持久性。<br></p>
+<p>&nbsp;&nbsp;&nbsp;Redis还支持平滑到建立主从异步复制，具有非常快的非阻塞第一同步，自动重新连接和部分重新同步在网络分裂上。<br>其他功能包括：<br></p>
 <ul>
-<li>提高效率，解放了鼠标操作</li>
-<li>让人觉得十分专业，专业素养很高</li>
+<li>Transactions</li>
+<li>Pub/Sub</li>
+<li>Lua scription</li>
+<li>Keys with limiting time-to-live</li>
+<li>LRU eviction of keys</li>
+<li>Automatic failover</li>
 </ul>
-<p>eclipse中的快捷键：</p>
-<ul>
-<li>注释模板：alt+shift+j</li>
-<li>查看类，方法，变量定义：ctrl+鼠标左键</li>
-<li>查看当前类的所有方法结构：ctrl+o</li>
-<li>查看当前类的继承结构：ctrl+t</li>
-<li>在当前工作空间的查找文件资源：ctrl+shift+r</li>
-<li>导入包：ctrl+shift+o</li>
-<li>关闭文本：ctrl+w</li>
-<li>在不同文本框切换：ctrl+e</li>
-<li>查看各种定义时返回上一级(与ctrl+鼠标左键配合使用)：alt+方向左右键</li>
-<li>某个方法的调用关系树：ctrl+alt+h</li>
-<li>内容辅助： alt+/</li>
-<li>错误辅助：ctrl+1</li>
-<li>删除当前行：ctrl+d</li>
-<li>编辑器变大变小：ctrl+m</li>
-</ul>
-<p>其他以后继续。</p>
-<p>浏览器：<br>很多时候在调试的时候总是要清楚浏览器缓存才能看到改变后的效果浏览器清楚缓存快捷键：ctrl+shift+del</p>
-<p>sublime：</p>
-<ul>
-<li>将当前打开的文件在浏览器打开：ctrl+b</li>
-<li>保存当前文件修改，刷新浏览器并在切换到浏览器(需要事先在浏览器打开这个文件)：super+shift+r(super指home键)</li>
-</ul>
+<p>大多数编程语言都实现了redis<br>Redis以ANSI C编写，可在大多数POSIX系统中使用，如Linux，*BSD,OS X,无需外部依赖，Linux和OS X是Redis开发和更多测试的两个操作系统，我们建议使用Linux进行部署。 Redis可能在像Solaris的派生系统中工作，但是支持是最大的努力。 没有对Windows构建的官方支持，但Microsoft开发和维护Redis的Win-64端口。<br></p>
+<p>Redis是所谓的键值存储，通常被称为NoSQL数据库。 键值存储的本质是在键内存储一些数据（称为值）的能力。 仅当我们知道用于存储它的确切密钥时，才可以稍后检索该数据。 我们可以使用命令SET将值“fido”存储在“server：name”键：<br><br>   SET server:name “fido”<br></p>
+<p>Redis将永久存储我们的数据，所以我们可以稍后问“什么是存储在密钥服务器上的值：name？ 并且Redis将回复“fido”：<br><br>  GET server:name =&gt; “fido”</p>
 
           
         
@@ -447,7 +432,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -490,7 +475,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -499,7 +484,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -508,7 +493,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
