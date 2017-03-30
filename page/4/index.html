@@ -268,7 +268,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/04/初识redis/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/12/IntelliJ/从eclipe迁移到IntelliJ IDEA/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Josh Loh">
@@ -293,8 +293,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/04/初识redis/" itemprop="url">
-                  初识redis
+                <a class="post-title-link" href="/2017/03/12/IntelliJ/从eclipe迁移到IntelliJ IDEA/" itemprop="url">
+                  从eclipse迁移到IntelliJ IDEA
                 </a>
               
             
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-04T21:31:29+08:00">
-                2017-03-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-12T10:42:43+08:00">
+                2017-03-12
               </time>
             
 
@@ -351,8 +351,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/04/初识redis/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/04/初识redis/" itemprop="commentCount"></span>
+                <a href="/2017/03/12/IntelliJ/从eclipe迁移到IntelliJ IDEA/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/12/IntelliJ/从eclipe迁移到IntelliJ IDEA/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -380,20 +380,50 @@
       
         
           
-            <p>Redis是一个开源的(BSD许可)，内存(译者注：in-memory)数据存储结构，被用作数据库，缓存，消息代理了。它支持诸如字符串，哈希，列表，集合，带有范围查询的排序集，位图，超文本和具有半径查询的地理空间索引.Redis具有内置复制，Lua脚本，LRU逐出，事务和不同级别的磁盘持久性，通过Redis Sentinel提供高可用和通过Redis Cluster（译者注：cluster【簇】）进行自动分区.<br><br>&nbsp;&nbsp;&nbsp;你可以在这些类型上至执行原子操作，例如附加字符串，递增散列中的值，增加列表元素，计算交集，并集，差集，或者获得排序集中排名最高的元素。<br></p>
-<p>&nbsp;&nbsp;&nbsp;为了实现其出色的性能，Redis使用内存中的数据集。 根据您的用例，您可以通过将数据集每隔一段时间转储到磁盘，或通过将每个命令附加到日志来持久化它。 如果您只需要功能丰富的联网的内存缓存，则可以选择禁用持久性。<br></p>
-<p>&nbsp;&nbsp;&nbsp;Redis还支持平滑到建立主从异步复制，具有非常快的非阻塞第一同步，自动重新连接和部分重新同步在网络分裂上。<br>其他功能包括：<br></p>
+            <blockquote>
+<blockquote>
+<p>译者注：作为一个java新人，感觉以后IDEA的使用会更加普遍.所以决定好好了解这个IDEA.</p>
+</blockquote>
+</blockquote>
+<h3 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h3><p>从Eclipse切换到IntelliJ IDEA，特别是如果你已经习惯使用Eclipse，那么需要了解两个IDE之间的一些根本区别，包括它们的<br><span style="font-weight:bold;font-style:italic;font-family:Georgia;font-size:1em">用户界面，编译方法，快捷键</span>，项目配置和其他方面。<br></p>
+<h3 id="用户界面"><a href="#用户界面" class="headerlink" title="用户界面"></a>用户界面</h3><h4 id="NO-workspace"><a href="#NO-workspace" class="headerlink" title="NO workspace"></a>NO workspace</h4><p>在启动IntelliJ IDEA时，您会注意到的第一件事是它没有工作空间概念。 这意味着您一次只能处理一个项目。 在Eclipse中，通常有一组可能依赖于彼此的项目，在IntelliJ IDEA中，您有一个由一组<span style="font-weight:bold">模块</span>组成的项目。<br><br>如果您有多个不相关的项目，可以在单独的窗口中打开它们。<btr><br>如果您仍然希望在一个窗口中打开几个不相关的项目，作为解决方法，您可以<span style="font-size:1.5em">在IntelliJ IDEA中将它们全部配置为模块</span>。</btr></p>
+<h3 id="IntelliJ-IDEA-vs-Eclipse-（之间术语的比较）"><a href="#IntelliJ-IDEA-vs-Eclipse-（之间术语的比较）" class="headerlink" title="IntelliJ IDEA vs Eclipse （之间术语的比较）"></a>IntelliJ IDEA vs Eclipse （之间术语的比较）</h3><table><br><tr><br><th>elipse</th><br><th>IntelliJ IDEA</th><br></tr><br><tr><br><td>Workspace</td><br><td>Project</td><br></tr><br><tr><br><td>Project</td><br><td>Module</td><br></tr><br><tr><br><td>Facet</td><br><td>Facet</td><br></tr><br><tr><br><td>Library</td><br><td>Librart</td><br></tr><br><tr><br><td>JRE</td><br><td>SDK</td><br></tr><br><tr><br><td>Classpath Variable</td><br><td>Path Variable</td><br></tr><br></table>
+
+
+
+
+
+<h4 id="No-perspectives"><a href="#No-perspectives" class="headerlink" title="No perspectives"></a>No perspectives</h4><p>当你切换到IntelliJ IDEA时，第二个大的惊喜是它没有透视图。<br><br>这意味着您不需要手动在不同的工作区布局之间切换以执行不同的任务。 IDE遵循您的上下文并自动启动相关工具。<br><img src="/images/idea/migration_guide_debugger_1.PNG"></p>
+<h4 id="Tool-windows"><a href="#Tool-windows" class="headerlink" title="Tool windows"></a>Tool windows</h4><p>就像在Eclipse中，在IntelliJ IDEA中，你也有工具窗口。 要打开工具窗口，只需在工具窗口栏中单击它：<br><img src="images/migration_guide_tool_window_bar_2.png"><br>如果工具窗口栏被隐藏，您可以通过将鼠标悬停在左下角的相应图标上来打开任何工具窗口:<br><img src="images/migration_guide_tool_window_bar_1.png"></p>
+<p>如果要使工具窗口栏暂时可见，可以按Alt（Cmd for OS X）两次并按住它。<br><br>如果不想使用鼠标，可以通过相应的快捷键切换到任何工具栏。 要记住的最重要的快捷键是：</p>
 <ul>
-<li>Transactions</li>
-<li>Pub/Sub</li>
-<li>Lua scription</li>
-<li>Keys with limiting time-to-live</li>
-<li>LRU eviction of keys</li>
-<li>Automatic failover</li>
+<li>-Project: Alt+1</li>
+<li>-Version Control： Alt+9</li>
+<li>-Terminal： Alt+F12</li>
 </ul>
-<p>大多数编程语言都实现了redis<br>Redis以ANSI C编写，可在大多数POSIX系统中使用，如Linux，*BSD,OS X,无需外部依赖，Linux和OS X是Redis开发和更多测试的两个操作系统，我们建议使用Linux进行部署。 Redis可能在像Solaris的派生系统中工作，但是支持是最大的努力。 没有对Windows构建的官方支持，但Microsoft开发和维护Redis的Win-64端口。<br></p>
-<p>Redis是所谓的键值存储，通常被称为NoSQL数据库。 键值存储的本质是在键内存储一些数据（称为值）的能力。 仅当我们知道用于存储它的确切密钥时，才可以稍后检索该数据。 我们可以使用命令SET将值“fido”存储在“server：name”键：<br><br>   SET server:name “fido”<br></p>
-<p>Redis将永久存储我们的数据，所以我们可以稍后问“什么是存储在密钥服务器上的值：name？ 并且Redis将回复“fido”：<br><br>  GET server:name =&gt; “fido”</p>
+<p>关于工具窗口的另一个事情是，你可以拖动，固定，取消固定，附加和分离：<br><img src="images/migration_guide_tool_windows.png"><br>为了帮助存储/恢复工具窗口布局，有两个有用的命令：</p>
+<ul>
+<li>-Window | Store Current Layout as Default</li>
+<li>-Window | Restore Default Layout (also available via Ctrl+F12)</li>
+</ul>
+<h4 id="多个窗口"><a href="#多个窗口" class="headerlink" title="多个窗口"></a>多个窗口</h4><p>IntelliJ IDEA中的Windows管理与Eclipse稍有不同。 您无法使用一个项目打开多个窗口，但可以将任意数量的编辑器选项卡分离到单独的窗口中。</p>
+<h4 id="Auto-scrolling-to-from-sources"><a href="#Auto-scrolling-to-from-sources" class="headerlink" title="Auto-scrolling to/from sources"></a>Auto-scrolling to/from sources</h4><p>默认情况下，在编辑器选项卡之间切换时，IntelliJ IDEA不会更改“项目”工具窗口中的选择。 但是，您可以在工具窗口设置中启用它：<br><img src="images/migration_guide_auto_scroll_from_source.png"></p>
+<h4 id="启用行号"><a href="#启用行号" class="headerlink" title="启用行号"></a>启用行号</h4><p>默认情况下，编辑器中不显示行号。 要启用它们，请转到<span style="font-weight:bold">Settings/Preferences | Editor | General | Appearance | Show line numbers</span>。 在那里你还会发现其他有用的设置。</p>
+<h3 id="General-workflow（一般工作流程）"><a href="#General-workflow（一般工作流程）" class="headerlink" title="General workflow（一般工作流程）"></a>General workflow（一般工作流程）</h3><h5 id="No-‘save’-button"><a href="#No-‘save’-button" class="headerlink" title="No ‘save’ button"></a>No ‘save’ button</h5><p>是时候公布一些令人真正令人震惊的消息：IntelliJ IDEA没有保存按钮。 由于在IntelliJ IDEA中，您可以撤消重构并从<strong>本地历史（local history）</strong>记录中还原更改，因此提示您每次是否保存更改是没有意义的。<br></p>
+<p>但是，值得了解的是，物理保存到磁盘是由某些事件触发的，包括编译，关闭文件，将焦点切换到IDE等。您可以通过Settings | Appearance &amp; Behavior | System Settings：<br><img src="images/migration_guide_save_settings.png"></p>
+<h5 id="No-save-action"><a href="#No-save-action" class="headerlink" title="No save action"></a>No save action</h5><p>作为Eclipse用户使用IntelliJ IDEA可能会怀念的一个功能是保存操作，在IntelliJ IDEA中保存动作是自动触发的，例如重新格式化代码，组织导入，添加缺少的注释和最终修改器等。IntelliJ IDEA为您提供 在提交时自动执行相应的操作（意思是在提交时自动保存你执行的修改，比如格式化代码等）：<br><img src="images/migration_guide_commit.png"><br>或者手动完成：</p>
+<ul>
+<li>-Code | Reformat Code (Ctrl+Alt+L)</li>
+<li>-Code | Optimize Imports (Ctrl+Alt+O)</li>
+<li>-Analyze | Code Cleanup</li>
+</ul>
+<p>如果由于某些原因，您不能在没有Eclipse保存操作的情况下生存(意思是你不习惯没有保存按钮)，那么您可以安装一个模拟Eclipse保存操作的插件。 <a href="https://plugins.jetbrains.com/plugin/7642-save-actions" target="_blank" rel="external">插件链接</a></p>
+<h3 id="Compilation（编译）"><a href="#Compilation（编译）" class="headerlink" title="Compilation（编译）"></a>Compilation（编译）</h3><p>IntelliJ IDEA编译项目的方式在许多方面都与Eclipse不同。</p>
+<h4 id="Auto-compilation-自动编译"><a href="#Auto-compilation-自动编译" class="headerlink" title="Auto-compilation(自动编译)"></a>Auto-compilation(自动编译)</h4><p>默认情况下，IntelliJ IDEA不会在保存时自动编译项目，因为通常我们不会在IntelliJ IDEA中显式调用保存操作。<br><br>如果要模拟Eclipse行为，可以调用Make Project操作（Ctrl + F9） - 它将保存更改的文件并进行编译。 为了方便起见，您甚至可以将Ctrl + S快捷方式重新分配到“Make Project”操作。<br><br>要启用自动编译，请导航到 Settings/Preferences | Build, Execution, Deployment | Compiler并选择“ Make project automatically”选项。(译者注：我发现我的版本并没有make projecr这个选项，只有build project automatically)。<br><img src="images/migration_guide_complier_settings.png"></p>
+<p>请注意，IntelliJ IDEA中的自动编译与Eclipse中的自动编译不同。 在Eclipse中，它不是完全自动的，因为它是由用户显式调用的保存操作触发的，而在IntelliJ IDEA中，当您在编辑器中键入时，它会被隐式调用。</p>
+<p>这就是为什么，即使启用了Make project自动选项，IntelliJ IDEA也不会在至少一个应用程序正在运行时执行自动编译：它将隐式地重新加载应用程序中的类。 在这种情况下，您可以调用Build | 制作项目（Ctrl + F9）。</p>
+<h4 id="Problems-tool-window-problem工具窗口"><a href="#Problems-tool-window-problem工具窗口" class="headerlink" title="Problems tool window(problem工具窗口)"></a>Problems tool window(problem工具窗口)</h4><p>如果在编译器设置中启用了自动编译项目选项，将出现problems工具窗口。 它显示了项目编译中检测到的problems列表：<br><img src="images/migration_guide_problems_tool_window.png"></p>
+<h4 id="Eclipse-compiler"><a href="#Eclipse-compiler" class="headerlink" title="Eclipse compiler"></a>Eclipse compiler</h4><p>虽然Eclipse使用自己的编译器，IntelliJ IDEA使用与项目JDK捆绑的javac编译器。 如果必须使用Eclipse编译器，请导航到Settings/Preferences | Build, Execution, Deployment | Compiler | Java Compiler并选择它，如下所示：<br><img src="images/migration_guide_eclipse_compiler.png"><br>Eclipse和javac编译器之间的最大区别是Eclipse编译器更容错，有时让您运行不编译的代码。（译者注：说明eclipse的编译器不够严，不够敏感）<br><br>需要在IntelliJ IDEA中运行编译错误的代码的情况下，请用运行配置中的Make选项make，no error check替换：<br><img src="images/migration_guide_make_no_error_check.png"></p>
 
           
         
@@ -432,7 +462,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -475,7 +505,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -493,7 +523,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
