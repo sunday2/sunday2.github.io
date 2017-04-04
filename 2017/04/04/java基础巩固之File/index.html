@@ -1,0 +1,857 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="File," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="在java的所有原生类库中，File类是比较重要的类之一。
+
+继承体系只有一个父类，Object。实现了两个接口，Serializable，Comparable。分别说明了File对象可以进行持久化存储，网络传输和两个File对象通过compareTo方法进行比较。
+File类简介File类是对文件和目录路径的抽象表示。
+用户界面和操作系统使用系统依赖的路径名命名文件和目录。这个类是对分层路径名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础巩固之File">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/java基础巩固之File/index.html">
+<meta property="og:site_name" content="LargebeaR's Home">
+<meta property="og:description" content="在java的所有原生类库中，File类是比较重要的类之一。
+
+继承体系只有一个父类，Object。实现了两个接口，Serializable，Comparable。分别说明了File对象可以进行持久化存储，网络传输和两个File对象通过compareTo方法进行比较。
+File类简介File类是对文件和目录路径的抽象表示。
+用户界面和操作系统使用系统依赖的路径名命名文件和目录。这个类是对分层路径名">
+<meta property="og:updated_time" content="2017-04-04T08:07:31.346Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java基础巩固之File">
+<meta name="twitter:description" content="在java的所有原生类库中，File类是比较重要的类之一。
+
+继承体系只有一个父类，Object。实现了两个接口，Serializable，Comparable。分别说明了File对象可以进行持久化存储，网络传输和两个File对象通过compareTo方法进行比较。
+File类简介File类是对文件和目录路径的抽象表示。
+用户界面和操作系统使用系统依赖的路径名命名文件和目录。这个类是对分层路径名">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6383903535905375000',
+      author: '主编大人'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/04/java基础巩固之File/"/>
+
+
+
+
+
+  <title> java基础巩固之File | LargebeaR's Home </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">LargebeaR's Home</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/java基础巩固之File/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Josh Loh">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="LargebeaR's Home">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="LargebeaR's Home" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                java基础巩固之File
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-04T20:34:31+08:00">
+                2017-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/04/java基础巩固之File/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/04/java基础巩固之File/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>在java的所有原生类库中，File类是比较重要的类之一。</p>
+</blockquote>
+<h3 id="继承体系"><a href="#继承体系" class="headerlink" title="继承体系"></a>继承体系</h3><p>只有一个父类，Object。实现了两个接口，Serializable，Comparable。分别说明了File对象可以进行持久化存储，网络传输和两个File对象通过compareTo方法进行比较。</p>
+<h3 id="File类简介"><a href="#File类简介" class="headerlink" title="File类简介"></a>File类简介</h3><p>File类是对<strong>文件</strong>和<strong>目录</strong>路径的抽象表示。</p>
+<p>用户界面和操作系统使用系统依赖的路径名命名文件和目录。这个类是对分层路径名的一种抽象的，系统无关的视图表示。</p>
+<p>一个路径的抽象由两部分组成。</p>
+<p>1.一个可选的<strong>系统依赖</strong>的前缀字符串，例如磁盘驱动说明符，UNIX系统根目录”/“,微软Windows的UNC路径名”\\“。</p>
+<p>2.零个或多个字符串名字的序列。</p>
+<blockquote>
+<p>抽象路径的第一个名字可能是目录名或者，如果是微软Windows的UNC路径名，那么第一个名字是主机名。随后（除了最后一个）的抽象路径名中的名字表示目录名，最后一个名字可能表示目录或文件。总结，<strong>名字</strong>的含义可以是目录名或者文件名或者主机名。</p>
+</blockquote>
+<h4 id="路径抽象和路径字符串之间的转换是系统依赖的"><a href="#路径抽象和路径字符串之间的转换是系统依赖的" class="headerlink" title="路径抽象和路径字符串之间的转换是系统依赖的"></a>路径抽象和路径字符串之间的转换是系统依赖的</h4><p>路径抽象(abstract pathname)–&gt;路径字符串(pathname string):名字之间由默认的分隔符字符分割(seperator character)，而分隔符是由系统属性<strong>file.seperator</strong>定义的。在java中，由File类的public static修饰的字段seperator,seperatorChar提供。</p>
+<p>路径字符串(pathname string)—&gt;路径抽象(abstract pathname),路径抽象中的名字间可能被默认的名字分隔符或者其它底层系统支持的分隔符分割。</p>
+<h4 id="绝对路径和相对路径-absolute-pathname和relative-pathname"><a href="#绝对路径和相对路径-absolute-pathname和relative-pathname" class="headerlink" title="绝对路径和相对路径(absolute pathname和relative pathname)"></a>绝对路径和相对路径(absolute pathname和relative pathname)</h4><p>不管是路径的抽象形式还是字符串形式，都分为绝对路径和相对路径。绝对路径是完整的，所以不需要其它信息来定位它所表示的文件。相反，相对路径必须根据从其它路径获取的信息进行解释。通常java.io包里的类是通过用户当前目录(current user directory)来解析相对路径，这个目录通过系统属性<strong>user.dir</strong>来命名，<strong>这个目录一般也是JVM被调用的目录</strong>。（你在哪个目录里调用了JVM，执行java程序，那个目录就是用户当前目录）</p>
+<h4 id="抽象路径的父亲-parent-of-abstract-pathname"><a href="#抽象路径的父亲-parent-of-abstract-pathname" class="headerlink" title="抽象路径的父亲(parent of abstract pathname)"></a>抽象路径的父亲(parent of abstract pathname)</h4><p>可以通过File的getParent方法得到抽象路径的父亲，而且这个父亲路径是由抽象路径的前缀和抽象路径中<strong>除了最后一个名字</strong>的其它名字序列组成。任何目录的绝对路径是任何带有由目录的绝对路径开始的绝对抽象路径的File对象的祖先。例如，由”/usr”表示的抽象路径是由”/usr/local/bin”表示的抽象路径的祖先。</p>
+<h4 id="路径前缀"><a href="#路径前缀" class="headerlink" title="路径前缀"></a>路径前缀</h4><p>前缀这个概念是用来处理UNIX操作系统中的根目录和微软系统下的驱动说明符，根目录，UNC路径。<br>如下：</p>
+<ul>
+<li>UNIX平台中，绝对路径的前缀总是”/“.相对路径没有前缀。表示抽象路径的根目录拥有前缀”/“和空的名字序列。</li>
+<li>在微软Windows平台中，路径的前缀由驱动说明符(drive specifier)组成,而驱动说明符是由驱动符和”:”组成即drive letter后面跟着冒号。如果是绝对路径那么驱动说明符后面还跟着”\“。UNC路径的前缀是”\\“,主机名(hostname)和共享名(share name)是跟在后面的名字序列中的最前面的两个。没有指定驱动的相对路径没有前缀。</li>
+</ul>
+<p><strong>File类的实例是不可变的; 也就是说，一旦创建，由File对象表示的抽象路径名永远不会改变。</strong></p>
+<p>其它经常使用到的，File中的toPath方法可以返回一个java.nio.file.Path对象能够提供更多关于文件对象的操作。RandomAccessFile对象。</p>
+<p>为了实现系统无关的文件创建和存储工作，一般我们会使用系统属性，这样就不用考虑路径前缀问题，毕竟路径前缀是系统依赖的：</p>
+<ul>
+<li>user.home: 用户的home direcrory</li>
+<li>user.dir: 用户当前工作的目录</li>
+<li>java.io.tempdir: 默认临时文件目录</li>
+</ul>
+<p>这些系统属性是通过System类中的getProperty方法得到。</p>
+<p>####File类中的四个public static修饰的字段</p>
+<ul>
+<li>pathSeperator:是不同抽象路径的分隔符，是String类型。使用情景诸如读取系统环境变量path或者classpath。</li>
+<li>pathSeperatorChar:同上，是char类型</li>
+<li>Seperator:是一个抽象路径中的不同名字的分隔符，是String类型</li>
+<li>seperatorChar：同上，是char类型分</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/site.png" alt="Josh Loh wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫，用手机访问本站</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Josh Loh WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Josh Loh Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+	<div>
+	  
+		
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
+
+	  
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/File/" rel="tag"># File</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/30/Ehcache跟踪1/" rel="next" title="Ehcache跟踪1">
+                <i class="fa fa-chevron-left"></i> Ehcache跟踪1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/04/04/java基础巩固之File/"
+     data-title="java基础巩固之File"
+     data-content=""
+     data-url="http://yoursite.com/2017/04/04/java基础巩固之File/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/04/java基础巩固之File/"
+           data-title="java基础巩固之File" data-url="http://yoursite.com/2017/04/04/java基础巩固之File/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Josh Loh" />
+          <p class="site-author-name" itemprop="name">Josh Loh</p>
+          <p class="site-description motion-element" itemprop="description">Actions speak louder than words.</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sunday2" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              友情链接
+            </div>
+            <!--
+                  <ul class="links-of-blogroll-list">
+                    
+                      <li class="links-of-blogroll-item">
+                        <a href="http://largebear.net" title="sunday2" target="_blank">sunday2</a>
+                      </li>
+                    
+                  </ul>
+            -->
+          
+              <span class="links-of-author-item" style="text-align:left">
+                <a href="http://largebear.net" title="sunday2" target="_blank">
+                  sunday2
+                </a>
+              </span>
+          
+          
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Josh Loh</span>
+</div>
+
+<!--
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+-->
+
+
+<!--
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+-->
+<!--访问量统计-->
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+<p>本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+您是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴</p>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunday2"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
