@@ -101,7 +101,7 @@ File类简介File类是对文件和目录路径的抽象表示。
 继承体系只有一个父类，Object。实现了两个接口，Serializable，Comparable。分别说明了File对象可以进行持久化存储，网络传输和两个File对象通过compareTo方法进行比较。
 File类简介File类是对文件和目录路径的抽象表示。
 用户界面和操作系统使用系统依赖的路径名命名文件和目录。这个类是对分层路径名">
-<meta property="og:updated_time" content="2017-04-04T08:07:31.346Z">
+<meta property="og:updated_time" content="2017-04-05T00:33:05.264Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础巩固之File">
 <meta name="twitter:description" content="在java的所有原生类库中，File类是比较重要的类之一。
@@ -415,9 +415,15 @@ File类简介File类是对文件和目录路径的抽象表示。
 <li>user.dir: 用户当前工作的目录</li>
 <li>java.io.tempdir: 默认临时文件目录</li>
 </ul>
+<p>测试代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.lang.System;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemTest</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">		System.out.println(System.getProperty(<span class="string">"user.home"</span>));</div><div class="line">		System.out.println(System.getProperty(<span class="string">"user.dir"</span>));</div><div class="line">		System.out.println(System.getProperty(<span class="string">"java.io.temdir"</span>));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>结果显示：</p>
+<p>C:\Users\ZhixiongLuo</p>
+<p>D:\QQPCmgr\Desktop\CLASSPATH</p>
+<p>null</p>
+<p>估计java.io.tempdir在web 容器中有效。</p>
 <p>这些系统属性是通过System类中的getProperty方法得到。</p>
-<p>####File类中的四个public static修饰的字段</p>
-<ul>
+<h4 id="File类中的四个public-static修饰的字段"><a href="#File类中的四个public-static修饰的字段" class="headerlink" title="File类中的四个public static修饰的字段"></a>File类中的四个public static修饰的字段</h4><ul>
 <li>pathSeperator:是不同抽象路径的分隔符，是String类型。使用情景诸如读取系统环境变量path或者classpath。</li>
 <li>pathSeperatorChar:同上，是char类型</li>
 <li>Seperator:是一个抽象路径中的不同名字的分隔符，是String类型</li>
@@ -503,6 +509,10 @@ File类简介File类是对文件和目录路径的抽象表示。
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/04/05/java基础巩固之URL/" rel="prev" title="java基础巩固之URL">
+                java基础巩固之URL <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -585,7 +595,7 @@ File类简介File类是对文件和目录路径的抽象表示。
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -603,7 +613,7 @@ File类简介File类是对文件和目录路径的抽象表示。
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
