@@ -268,7 +268,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/java基础巩固之URL/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/06/Java中的编码问题/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Josh Loh">
@@ -293,8 +293,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/05/java基础巩固之URL/" itemprop="url">
-                  java基础巩固之URL
+                <a class="post-title-link" href="/2017/04/06/Java中的编码问题/" itemprop="url">
+                  未命名
                 </a>
               
             
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-05T12:53:01+08:00">
-                2017-04-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-06T08:21:04+08:00">
+                2017-04-06
               </time>
             
 
@@ -321,28 +321,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -351,8 +329,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/05/java基础巩固之URL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/05/java基础巩固之URL/" itemprop="commentCount"></span>
+                <a href="/2017/04/06/Java中的编码问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/06/Java中的编码问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -380,35 +358,7 @@
       
         
           
-            <blockquote>
-<p>相信我们经常接触到URL(Universal Resource Locator),比如网址类型的URL.我们有时还会听到URI，那么你们真的搞懂什么叫URL,URI了吗？</p>
-</blockquote>
-<h3 id="你好，我叫URL"><a href="#你好，我叫URL" class="headerlink" title="你好，我叫URL"></a>你好，我叫URL</h3><p>URL学术名叫做通用资源定位器(Universal Resource Locator)。可以把URL认为是标准文件概念的扩展:不仅可以指向目录中的文件，而且文件和目录可以存在于网络中的任何机器，可以通过几种不同的方法被服务，而且可能不仅仅是像文件这么简单。URLs可以指向查询(queries)，文档(documents),或者数据库中的数据集(datasets),或者其它东西。</p>
-<p>URL可以分为这几大类：File URLs,Gopher URLs,News URLs,HTTP URLs,Other URLs.</p>
-<h3 id="File-URLs"><a href="#File-URLs" class="headerlink" title="File URLs"></a>File URLs</h3><p>假设在FTP服务器(“ftp.yoyodyne.com”)上有一个目录(“pub/files”)，该目录下有一个叫做”foobar.txt”的文档，那么其URL形式如下：</p>
-<p>file://ftp.yoyodyne.com/pub/files/foobar.txt</p>
-<p>该FTP服务器的最高级目录为</p>
-<p>file://ftp.yoyodyne.com/</p>
-<p>该目录下的pub目录为</p>
-<p>file://ftp.yoyodyne.com/pub</p>
-<h3 id="Gopher-URLs"><a href="#Gopher-URLs" class="headerlink" title="Gopher URLs"></a>Gopher URLs</h3><p>Gopher是网络中分布式文件获取协议。默认的gopher端口是70，URL的形式如下：</p>
-<p>  gopher://gopher.banzai.edu:1234/</p>
-<h3 id="NEWs-URLs"><a href="#NEWs-URLs" class="headerlink" title="NEWs URLs"></a>NEWs URLs</h3><p>目前，像Mosaic这样的网络客户端不允许您指定像通常所期望的新闻服务器（例如news：//news.yoyodyne.com/rec.gardening）; 这是下降的道路，但在此期间，您将必须通过其他方法指定您的本地新闻服务器。 最常见的方法是在启动Mosaic之前将环境变量NNTPSERVER设置为新闻服务器的名称。</p>
-<h3 id="HTTP-URLs"><a href="#HTTP-URLs" class="headerlink" title="HTTP URLs"></a>HTTP URLs</h3><p>HTTP 表示超文本传输协议。HTTP服务器用来服务与超文本文档，因为HTTP是非常低开销的协议，基于导航信息能够直接嵌入文档中的事实，因此协议本身并不需要想FTP,Gopher协议那样支持完整的导航功能。</p>
-<p>如果在HTTP服务器(www.yoyodyne.com)下的目录(“/pub/files”)下有一个名为”foobar.html”，那么其对应的URL是 </p>
-<pre><code>http://www.yoyodyne.com/pub/files/foobar.html
-</code></pre><p>HTTP服务器的默认端口是80，如果改为其它端口，如1234，那么URL为：</p>
-<p>  <a href="http://www.yoyodyne.com:1234/pub/files/foobar.html" target="_blank" rel="external">http://www.yoyodyne.com:1234/pub/files/foobar.html</a></p>
-<h3 id="部分URLs（）"><a href="#部分URLs（）" class="headerlink" title="部分URLs（）"></a>部分URLs（）</h3><p>一旦查看位于网络某处的文档（例如，<a href="http://www.yoyodyne.com/pub/afile.html），您可以使用部分URL指向同一目录中的另一个文件，" target="_blank" rel="external">http://www.yoyodyne.com/pub/afile.html），您可以使用部分URL指向同一目录中的另一个文件，</a> 同一台机器，由相同的服务器软件服务。 例如，如果另一个文件存在于名为“anotherfile.html”的同一个目录中，那么另一个文件夹是此时的有效部分URL。<br>这提供了一种构建超文本文件集的简单方法。 如果一组超文本文件坐在一个共同的目录中，他们可以通过他们的文件名相互引用（即被超链接） - 但是读者可以到达其中一个文档，可以跳转到任何其他文档 在同一个目录中只需使用其他文件的文件名作为该点的部分URL。 将基于用于到达第一个文档的URL来假设附加信息（访问方法，主机名，端口号，目录名称等）。其实意思就是说在如果在一个文件中a引用了另外一个文件b的URL，那么这个a文件和b文件如果在同一个目录的话，b文件的URL就不用写全，只需要用相对路径来指定就可以了。如果是在同一个目录中，直接写文件名就好了。</p>
-<h3 id="其它类型"><a href="#其它类型" class="headerlink" title="其它类型"></a>其它类型</h3><p>许多其他网址是可行的，但我们已经涵盖了您可能手工构建的最常见的URL。 每个马赛克文档查看窗口的顶部是一个称为“文档URL”的文本字段; 如果您在浏览网络上的信息时观看该内容，您将了解如何将URL放在一起用于许多不同类型的信息。</p>
-<blockquote>
-<p>总结，首先我们需要实现相应协议的服务器，比如实现了FTP协议的服务器，实现了HTTP协议的服务器，这里的服务器概念是软件含义，显然也需要端口识别。URL前缀需要添加相应的通信协议，如FTP使用的是file://,HTTP使用的是<a href="http://.URL就是这样来定位资源的。" target="_blank" rel="external">http://.URL就是这样来定位资源的。</a></p>
-</blockquote>
-<p>注意：</p>
-<p>URL类本身不会根据RFC2396中定义的转义机制对任何URL组件进行编码或解码。 调用者有责任编码任何需要在调用URL之前进行转义的字段，并对从URL返回的任何转义字段进行解码。 此外，由于URL不具有URL转义的知识，因此不能识别同一URL的编码或解码形式之间的等同性。 例如，两个URL：</p>
-<p><a href="http://foo.com/hello" target="_blank" rel="external">http://foo.com/hello</a> world/</p>
-<p><a href="http://foo.com/hello%20world" target="_blank" rel="external">http://foo.com/hello%20world</a></p>
-<p>这会被认为两个不同的URL.</p>
+            <p>#JAVA中的编码问题<br>&emsp;&ensp;在编程中很多时候我们常常会不可避免的涉及编码问题，学过c++的一定听过ascii表，学过java的一定知道java是用unicode编码。</p>
 
           
         
@@ -447,7 +397,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -490,7 +440,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -508,7 +458,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
