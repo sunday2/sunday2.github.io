@@ -268,7 +268,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/REST/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/25/各种快捷键/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Josh Loh">
@@ -293,8 +293,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/17/REST/" itemprop="url">
-                  理解REST
+                <a class="post-title-link" href="/2017/02/25/各种快捷键/" itemprop="url">
+                  你必须知道的快捷键
                 </a>
               
             
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T21:47:10+08:00">
-                2017-02-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-25T10:47:01+08:00">
+                2017-02-25
               </time>
             
 
@@ -333,8 +333,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/翻译/" itemprop="url" rel="index">
-                    <span itemprop="name">翻译</span>
+                  <a href="/categories/学习方法/" itemprop="url" rel="index">
+                    <span itemprop="name">学习方法</span>
                   </a>
                 </span>
 
@@ -351,8 +351,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/17/REST/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/17/REST/" itemprop="commentCount"></span>
+                <a href="/2017/02/25/各种快捷键/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/25/各种快捷键/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -380,53 +380,36 @@
       
         
           
-            <p><a href="https://spring.io/understanding/REST" target="_blank" rel="external">原文</a></p>
-<p>REST（Representation State Transfer:表述性状态转移）2000年在Roy Fielding的博士论文中被介绍和定义.REST是设计分布式系统的一种架构风格。 它不是一个标准，而是一组约束，例如是无状态的，具有客户端/服务器关系，以及统一的接口。 REST不是与HTTP严格相关，但它最常与它相关联。</p>
-<p><strong><em>REST的原则</em></strong></p>
-<p><strong>资源(RESOURCES)</strong>:暴露容易理解的目录结构URIS</p>
-<p><strong>表述性（Representations）</strong>：传输JSON或XML形式来表示数据对象和属性</p>
-<p><strong>消息(Messages)</strong>：明确使用HTTP方法(比如GET,POST,PUT,和DELETE)</p>
-<p><strong>无状态(Stateless)</strong>:请求之间的交互没有在服务器存储客户端上下文。限制了状态依赖性和扩展性。客户端保存会话状态.</p>
-<p><strong><em>HTTP方法</em></strong></p>
-<p>使用HTTP方法将CRUD(create,retrieve,update,delete)操作映射到HTTP请求.</p>
-<p><strong>GET</strong></p>
-<p>检索信息.GET请求必须是安全和幂等的，意味着无论使用相同的参数多少次，结果是一样的(译者注：这里的用结果来表述可能有问题，http规范中get请求是说幂等，即使有副作用每次的副作用应该一样，因为如果每次请求的结果不一样，但是没有产生副作用也属于幂等)。它们可能有副作用，但是用户并不期待它们(译者注:这里副作用没搞清楚是啥),所以它们对于系统的操作的来说是不重要的。请求也可以是部分或者是有条件的。</p>
-<p>检索ID为1的地址：<br>GET /addresses/1</p>
-<p><strong>POST</strong></p>
-<p>请求URI上的资源对提供的实体(entity)做一些操作(do something)。通常POST用来创建一个新实体，但它也可以用来更新实体.</p>
-<p>创建一个新地址：<br>POST /addresses</p>
-<p><strong>PUT</strong></p>
-<p>将实体存储在URI。 PUT可以创建新实体或更新现有实体。 PUT请求是幂等的。 幂等性是PUT与POST请求之间的主要区别(译者注：PUT是幂等，POST不是幂等)。</p>
-<p>修改ID为1的地址：</p>
-<p>PUT /addresses/1</p>
-<p>注意：PUT替换现有实体。 如果仅提供数据元素的子集，则剩余的将被空或空替换。</p>
-<p><strong>DELETE</strong></p>
-<p>请求删除资源; 然而，资源不必立即被移除。 它可以是异步或长期运行的请求。</p>
-<p>删除ID为1的地址：</p>
-<p>DELETE /addresses/1</p>
-<p><strong>HTTP状态代码</strong></p>
+            <p>一开始我觉得去记快捷键是一件没必要的事，后来慢慢接触的东西多了，发现快捷键真的是提高了效率，常用的快捷键必须要记住，它带给你两个方面的好处：</p>
 <ul>
-<li>1XX -infomational</li>
-<li>2XX -success  </li>
-<li>3XX -redirection</li>
-<li>4XX -client error</li>
-<li>5XX -server error</li>
+<li>提高效率，解放了鼠标操作</li>
+<li>让人觉得十分专业，专业素养很高</li>
 </ul>
-<p><strong>媒体类型</strong><br>Accept和Content-Type HTTP头可以用于描述在HTTP请求中发送或请求的内容。 如果客户端请求JSON中的响应，则客户端可以将接受设置为application / json。 相反，当发送数据时，将Content-Type设置为application / xml告诉服务端请求中发送的数据是XML。(译者注：原文为告诉客户端，觉得不妥)</p>
-<p>译者注：</p>
-<p><strong>幂等性(Idempotence)</strong>：</p>
-<p>通俗的讲就是一个资源无论请求多少次，其副作用都是一样的(如果没有副作用的话那么应该n次都没有副作用)。</p>
-<p>幂等其实数学中的一个概念，维基百科上的定义：</p>
-<p>在数学里，幂等有两种主要的定义。</p>
-<p>二元运算：<br>设S为一具有作用于其自身的二元运算的集合，则S的元素s称为幂等的(相对于<em>)当<br>s\</em>s = s.<br>特别的是，任一单位元都是幂等的。若S的所有元素都是幂等的话，则其二元运算*被称做是幂等的。例如，并集和交集的运算便都是幂等的。</p>
-<p>一元运算:<br>设f为一由X映射至X的一元运算，则f为幂等的，当对于所有在X内的x，<br>f(f(x)) = f(x).<br>特别的是，恒等函数一定是幂等的，且任一常数函数也都是幂等的。</p>
-<p><em>上面四种请求中除了POST，其它都是幂等的。</em></p>
-<p><strong>副作用(side effect)</strong></p>
-<p>先总结一下，在GET,POST,PUT,DELETE四种请求中，只有GET没有副作用.<br>按译者自己的理解所谓的副作用就是有没有对资源造成改变，显然GET只是检索资源而没有对资源进行操作(只读),其它请求都有副作用，但是副作用并不是判断是否幂等的充分条件.如果相同的请求每次都有相同的副作用，那么该请求也是幂等的.注意这里强调相同的副作用.</p>
-<p><strong>POST和PUT区别</strong></p>
-<p>读者看了上面的文章可能感觉POST和PUT没有区别，都可以创建或更新已有的实体，但是其实有本质区别，POST是非幂等而PUT是幂等.POST请求的uri是接受实体的uri，使用该uri来创建或更新传递给服务端的实体。PUT请求的uri本身就是要创建或者更新的实体(所以客户端必须知道被处理的实体uri)。一个实际场景就是很多时候我们都是用数据库自增主键作为实体标志，这时候资源标识符(uri)是由服务端决定的，所以我们应该用POST，因为我们不知道要被处理的实体的id。</p>
-<p><strong>幂等不幂等有什么关系呢</strong></p>
-<p>我们很多时候因为网络等原因发送一个请求但是服务端并没有给予客户端反馈，这个时候我们可能会刷新一下浏览器再次发送方请求。那么问题来了，如果第一次请求其实服务端已经收到并且成功处理了该请求，只是在返回数据给客户端过程中因为网络原因延迟了，那么你就相当于发送了两次相同的请求。对于幂等请求来说发送多次相同的请求和发送一次请求是等价的，但是对于非幂等操作来说，就会产生一些意外的事故，特别是涉及金钱操作的时候，你原本只需要转100刀给别人，却转了两次，相当于转了200刀。所以有时候在chrome刷新页面的时候会提醒你是否再次发送方请求。</p>
+<p>eclipse中的快捷键：</p>
+<ul>
+<li>注释模板：alt+shift+j</li>
+<li>查看类，方法，变量定义：ctrl+鼠标左键</li>
+<li>查看当前类的所有方法结构：ctrl+o</li>
+<li>查看当前类的继承结构：ctrl+t</li>
+<li>在当前工作空间的查找文件资源：ctrl+shift+r</li>
+<li>导入包：ctrl+shift+o</li>
+<li>关闭文本：ctrl+w</li>
+<li>在不同文本框切换：ctrl+e</li>
+<li>查看各种定义时返回上一级(与ctrl+鼠标左键配合使用)：alt+方向左右键</li>
+<li>某个方法的调用关系树：ctrl+alt+h</li>
+<li>内容辅助： alt+/</li>
+<li>错误辅助：ctrl+1</li>
+<li>删除当前行：ctrl+d</li>
+<li>编辑器变大变小：ctrl+m</li>
+<li>快速自动生成相应对象的引用(光标放在”new 类型();”后面)：shift+alt+l</li>
+</ul>
+<p>其他以后继续。</p>
+<p>浏览器：<br>很多时候在调试的时候总是要清楚浏览器缓存才能看到改变后的效果浏览器清楚缓存快捷键：ctrl+shift+del</p>
+<p>sublime：</p>
+<ul>
+<li>将当前打开的文件在浏览器打开：ctrl+b</li>
+<li>保存当前文件修改，刷新浏览器并在切换到浏览器(需要事先在浏览器打开这个文件)：super+shift+r(super指home键)</li>
+</ul>
 
           
         
@@ -465,7 +448,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -508,7 +491,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -526,7 +509,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
